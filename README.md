@@ -7,15 +7,15 @@
 The purpose of our research project is to portray the consequences of smoking behavior (e.g. smoking-related diseases) and how prevalent they are among different demographics. We would like to demonstrate how smoking can be the gateway to numerous severe issues that can jeopardize one's life (portrayed via mortality measurements). 
 Research
 
-[Global Burden of Disease Due to Smokeless Tobacco Consumption in Adults; analysis from 113 countries]{https://link.springer.com/article/10.1186/s12916-015-0424-2}
+[Global Burden of Disease Due to Smokeless Tobacco Consumption in Adults; analysis from 113 countries](https://link.springer.com/article/10.1186/s12916-015-0424-2)
 
 This article was found on The Lancet and looks at the Global Burden of Disease due to consumption of smokeless tobacco by adults across 113 countries. And with the research and analysis provided, it gives us more data and work on tobacco (in a non-smoking sense)
 
-[Smoking prevalence and attributable disease burden in 195 countries and territories, 1990-2015: a systematic analysis from the Global Burden of Disease Study 2015]{https://www.sciencedirect.com/science/article/pii/S014067361730819X}
+[Smoking prevalence and attributable disease burden in 195 countries and territories, 1990-2015: a systematic analysis from the Global Burden of Disease Study 2015](https://www.sciencedirect.com/science/article/pii/S014067361730819X)
 
 This article was found on The Lancet and observes the daily smoking prevalence by gender, age group, and year for 195 countries and territories from 1990-2015. It also analyzes 38 risk-outcome pairs to generate estimates of smoking-attributable mortality and disease burdens (which is measured and defined by DALYs)
 
-[Patterns of global tobacco use in young people and implications for future chronic disease burden in adults]{https://www.sciencedirect.com/science/article/pii/S0140673606681920?casa_token=Kl-KM2d6G8sAAAAA:f2RrV9YRwkO6tBuzp_5yqPBi-9qtv0gjcO91PuSyzlrRNo7C03FJLPM-cFZneI78X2bZ46kLhQ}
+[Patterns of global tobacco use in young people and implications for future chronic disease burden in adults](https://www.sciencedirect.com/science/article/pii/S0140673606681920?casa_token=Kl-KM2d6G8sAAAAA:f2RrV9YRwkO6tBuzp_5yqPBi-9qtv0gjcO91PuSyzlrRNo7C03FJLPM-cFZneI78X2bZ46kLhQ)
 
 This article was found on a volume from The Lancet and it specifically focuses on the impact and effect of tobacco use by young people on global mortality. The study utilized a survey, denoted as the Global Youth Tobacco Survey (GYTS), which was taken by 13-15 year olds at 395 sites in 131 different countries, the Gaza Strip and the West Bank.
 
