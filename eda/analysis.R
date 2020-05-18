@@ -2,13 +2,13 @@ library("dplyr")
 library("ggplot2")
 library("tidyr")
 
-demo <- read.csv("./demographic data.csv", stringsAsFactors = F)
-top_demo <- demo%>%
-  top_n(10,wt=Rate)%>%
-  arrange(Rate)
+#demo <- read.csv("./demographic data.csv", stringsAsFactors = F)
+#top_demo <- demo%>%
+  #top_n(10,wt=Rate)%>%
+  #arrange(Rate)
 
-ggplot(top_demo)+
-  geom_col(aes(x=Area, y= Rate))+coord_flip()
+#ggplot(top_demo)+
+  #geom_col(aes(x=Area, y= Rate))+coord_flip()
   
 usage <- read.csv("./tobacco.csv",stringsAsFactors = F)
 tobacco <- usage %>%
@@ -36,7 +36,15 @@ wv<- usage%>%
   filter(State == "West Virginia")%>%
   summarise(
     mean=mean(as.numeric(sub("%","",Smoke.everyday))))
-  
+
+nation_ave <- usage %>% 
+  filter(State == "Nationwide (States, DC, and Territories)") %>%
+  select(Year, State, Smoke.everyday) %>%
+  ggplot(aes(x = Year, y = Smoke.everyday, group = 1)) +
+  labs(y = "Average % of People who Smoke Everyday", title = "Nationwide Averages of Everyday Smokers from 1995 to 2010") +
+  geom_point() +
+  geom_line()
+
 
 
 

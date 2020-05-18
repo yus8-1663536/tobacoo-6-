@@ -15,7 +15,7 @@ library(tidyr)
 library(knitr)
 ```
 
-## Overview
+# Overview
 This is a brief report regarding smoking percentage for each states in United Statas from 1995 to 2010. The data reveals that the highest daily smoking percentage in US is Kentucky, with percentage of 24.8% smoking everyday.
 
 Here are the states whose average of daily smoking percentage **are ranked at highest level** from 1995 to 2010. 
@@ -23,6 +23,9 @@ Here are the states whose average of daily smoking percentage **are ranked at hi
 ```{r tobacco_usage, echo=FALSE}
 kable(tobacco, col.names = c("State","Mean (percentage)","Standard Deviation"))
 ```
+
+
+# Distribution of Variables
 
 ## Trend of Top 5 highly-Smoking States Over 15 Years
 
@@ -33,3 +36,12 @@ ggplot(trend)+
   geom_point(aes(x=Year, y=Smoke.everyday,color=State))
 ```
 
+## Nationwide Averages of Everyday Smokers Over 15 Years
+
+This graph examines the nationwide averages of everyday smokers for each year in the dataset. Luckily, this dataset already included the averages under a State name of "Nationwide (States, DC, and Territories)". The graph shows that the nationwide average of everyday smokers has decreased by roughly 7.60% over 15 years, suggesting that measures to combat smoking such as awareness campaigns and taxing smoking products have been relatively effective.
+
+```{r nation_ave, echo=FALSE}
+nation_ave
+```
+
+# Relationships Between Variables 
