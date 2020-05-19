@@ -52,3 +52,11 @@ This chart illustrates the nationwide averages across the four smoking usage cat
 ```{r nation_lineplot, echo=FALSE}
 nation_lineplot
 ```
+
+## Smoking Behavior Changes Over 15 Years
+
+This graph shows the difference in smoking behavior percentages between 1995 and 2010 in the United States of America. In 1995, there was a higher percentage of people who were daily smokers compared to that in 2010. However, there were fewer people smoking some days in 1995 compared to 2010. The percentage of former smokers was very similar between the two years, with 1995 experiencing a slightly higher percentage. In 2010, there was a higher percentage of people who never smoked compared to 1995. This shows that while there might have been a slight decrease in smoking behavior over time, smoking is still prevalent within our society.
+
+```{r, echo=FALSE}
+year_comparison_plot
+```

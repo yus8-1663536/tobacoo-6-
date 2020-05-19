@@ -1,6 +1,8 @@
 library("dplyr")
 library("ggplot2")
 library("tidyr")
+library(reshape2)
+library(scales)
 
 #demo <- read.csv("./demographic data.csv", stringsAsFactors = F)
 #top_demo <- demo%>%
@@ -54,6 +56,26 @@ nation_lineplot <- usage %>%
   labs(title = "Nationwide Averages Across All Smoking Categories from 1995 to 2010") +
   geom_line()
 
+nation_years <- usage %>%
+  filter(State == "Nationwide (States, DC, and Territories)") %>%
+  select(Year, Smoke.everyday, Smoke.some.days, Former.smoker, Never.smoked) %>%
+  arrange (-Year)
 
+target <- c(1995, 2010)
+melt_nation_years_2 <- melt(nation_years, id = "Year") %>%
+  filter(Year %in% target)
+
+melt_nation_years_2$value<-as.numeric(substr(melt_nation_years_2$value,0,nchar(melt_nation_years_2$value)-1))
+melt_nation_years_2$Year <-as.factor(melt_nation_years_2$Year)
+
+year_comparison_plot <- ggplot(melt_nation_years_2, aes(fill = Year, x = variable, y = value)) +
+  geom_bar(position = "dodge", stat = "identity")+
+  labs(
+    title = "U.S. Nationwide Smoking Behavior in 1995 vs. 2010",
+    x = "Smoking Behavior",
+    y = "Percent of Nationwide Population"
+  ) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  coord_flip()
 
 
