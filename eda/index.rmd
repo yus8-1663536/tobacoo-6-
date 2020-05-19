@@ -44,4 +44,11 @@ This graph examines the nationwide averages of everyday smokers for each year in
 nation_ave
 ```
 
-# Relationships Between Variables 
+# Relationships Between Variables
+
+## Nationwide Averages Across All Smoking Categories Over 15 Years
+
+This chart illustrates the nationwide averages across the four smoking usage categories included in the dataset from 1995 to 2010. Although a simple visualization, it still manages to display the relationship between two continuous variables (time and percent) and one categorical variable (smoking activity) nicely. And its easy to see how each group has fared over time, significant trends, and comparisons admist different varaibles. For instance, there's an evident increase for those who have never smoked in 2004. Which also observes decreases for individuals who were former smokers and everyday smokers. This can be correlated to the successful Anti-Smoking efforts in America for that year.
+```{r nation_lineplot, echo=FALSE}
+nation_lineplot
+```

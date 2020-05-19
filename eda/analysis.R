@@ -45,6 +45,15 @@ nation_ave <- usage %>%
   geom_point() +
   geom_line()
 
+nation_lineplot <- usage %>%
+  filter(State == "Nationwide (States, DC, and Territories)") %>%
+  select(Smoke.everyday, Smoke.some.days, Former.smoker, Never.smoked, Year) %>%
+  gather(Category, Percentage, 1:4) %>%
+  mutate(Percentage = as.numeric(sub("%", "", Percentage))) %>%
+  ggplot(aes(x = Year, y = Percentage, group = Category, color = Category)) +
+  labs(title = "Nationwide Averages Across All Smoking Categories from 1995 to 2010") +
+  geom_line()
+
 
 
 
