@@ -4,11 +4,27 @@ source("text.R")
 
 my_ui <- navbarPage(
   title = "Tobacco Project",
-  tabPanel("Introduction"
-           
+  tabPanel("Introduction",
+           h2("Introduction"),
+           p(introduction_1),
+           p(introduction_2),
+           p(introduction_3)
            ),
-  tabPanel("David's Part"
-          
+  tabPanel("State Comparison",
+            sidebarLayout(
+              sidebarPanel(
+                selectInput("state_1", "State #1:", choices = dstates, selected = "Alabama"),
+                hr(),
+                selectInput("state_2", "State #2", choices = dstates, selected = "Alaska"),
+                hr(),
+                helpText("Choose two states to compare cancer rates")
+              ),
+              mainPanel(
+                plotOutput("states_cancer")
+              ),
+            ),
+           br(),
+           plotOutput("topStates")
            ),
   tabPanel("Yvan's Part"
            
@@ -19,11 +35,20 @@ my_ui <- navbarPage(
   tabPanel("Shilpa's Part"
            
            ),
+  tabPanel("Conclusion",
+           h2("Conclusion"),
+           p(conclusion_1)
+           ),
   fluid = TRUE
 )
 
 my_server <- function(input, output) {
- 
+ output$states_cancer <- renderPlot({
+   cancerByState(input$state_1, input$state_2)
+ })
+ output$topStates <- renderPlot({
+   topStates
+ })
 }
 
 shinyApp(ui = my_ui, server = my_server)
