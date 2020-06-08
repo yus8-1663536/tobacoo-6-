@@ -46,13 +46,28 @@ my_ui <- navbarPage(
   tabPanel(em("Jerimiyah's Part")
           
            ),
-  tabPanel(em("Shilpa's Part")
+  tabPanel(em("Nationwide by Year Comparison"),
+           sidebarLayout(
+             sidebarPanel(
+               selectInput("year_1", "Year Option 1:", choices = years_listed, selected = "1995"),
+               hr(),
+               selectInput("year_2", "Year Option 2:", choices = years_listed, selected = "2010"),
+               hr(), 
+               helpText("Choose two years to compare nationwide prevalence of daily smokers")
+             ),
+             mainPanel(
+               plotOutput("smokers_america")
+             ),
+           ),
+           br(),
+           tableOutput("smokers_america_table")
            
            ),
   tabPanel(em("Conclusion"),
            h2("Conclusion"),
            p(conclusion_1),
-           p(conclusion_2)
+           p(conclusion_2),
+           p(conclusion_4)
            ),
   fluid = TRUE
 )
@@ -71,6 +86,14 @@ my_server <- function(input, output) {
  
  output$topCancers <- renderTable({
    topCancers
+ })
+ 
+ output$smokers_america <- renderPlot({
+   nation_by_year(input$year_1, input$year_2)
+ })
+ 
+ output$smokers_america_table <- renderTable({
+   nationwide_behavior
  })
 }
 

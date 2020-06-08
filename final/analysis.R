@@ -58,4 +58,33 @@ topCancers <- cancer_type %>%
   mutate(Count = str_remove_all(Count,"'"))%>%
   arrange(desc(Count))%>%
   head(13)
+
+
+
+
+## Nationwide Data by Year
+
+nationwide_data <- tobacco %>%
+  filter(State == "Nationwide (States, DC, and Territories)") %>%
+  select(Year, Smoke.everyday)
+
+nationwide_data$Smoke.everyday<-as.numeric(substr(nationwide_data$Smoke.everyday,0,nchar(nationwide_data$Smoke.everyday)-1))
+nationwide_data$Year <-as.factor(nationwide_data$Year)
+
+## Function for Nationwide Data by Year
+nation_by_year<- function(year_1, year_2){
+  data_nationwide <- nationwide_data %>%
+    filter(Year == year_1 | Year == year_2)
   
+  ggplot(data_nationwide,aes(x = Year, y = Smoke.everyday, fill = Year))+
+    geom_col()+
+    labs(x="Year", y = "Percentage of Daily Smokers", title = "Comparison of U.S. Nationwide Percentage of Daily Smokers by Year")+
+    theme(plot.title = element_text(hjust = 0.5))
+
+}  
+
+## Table for Nationwide Smoking in America
+nationwide_behavior <- tobacco %>%
+  filter(State == "Nationwide (States, DC, and Territories)") %>%
+  select(Year, Smoke.everyday, Smoke.some.days, Former.smoker, Never.smoked) %>%
+  arrange(Year)

@@ -1,6 +1,6 @@
 introduction_1 <- "When our group first convened, our initial goal was to find a topic that could reach a broad audience so that we could create
-                  beneficial visualizations that could help people better understand the topic. We decided to research tobacco and it's effects on health
-                  as we believed that nearly everyone in the United States knows a person who smokes or has smoked in the past. we decided on our target
+                  beneficial visualizations that could help people better understand the topic. We decided to research tobacco and its effects on health,
+                  as we believed that nearly everyone in the United States knows a person who smokes or has smoked in the past. We decided on our target
                   audience to be the general public of the United States, and we tailored our visualizations to be simple and easy to work with so that those
                   who don't have much expertise in the coding or health fields could easily understand them."
 
@@ -42,6 +42,8 @@ conclusion_2 <- "The second tab, 'Cancer Type Comparison', looks into the all th
                 being said, the more frequent an organ get affected by hazardous substance from tobacco, the more likely that organ would be cancerized." 
 
 
+years_listed <- c("1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010")
+conclusion_4 <- "The fourth tab, 'Nationwide by Year Comparison', has an interactive plot that portrays the U.S. nationwide (including the states, D.C., and U.S. territories) daily smoker percentage by year. In terms of data, 15 different years are accounted for (from 1995 to 2010). Also, this tab includes a table displaying data about U.S. nationwide smoking behavior percentages by year (from 1995 to 2010). The interactive plot demonstrates how as the years go by, the percentage of daily smokers nationwide decreases in tiny increments. This may be a result of increasesd research and awareness about the negative consequences of daily smoking, which could go hand-in-hand with people starting to change their habits of being a smoker. The only exception to this pattern was in 2002, where this was a slight increase in the percentage. However, when looking at the pattern overall, there is a general decrease in daily smokers in the nation. The change is much more evident in the daily smoker percentage compared to that of people who smoke some days and former smokers. This is depicted by the table of nationwide smoking behavior percentages. While there is an almost 8% percent decrease in daily smokers, the percentages for the other behaviors tend to jump around slightly over the years. However, the nationwide percentage for people who have never smoked has increased over the years, which can also potentially indicate that more people are paying attention to the consequences of smoking and are therefore avoiding it."
 
 
 
