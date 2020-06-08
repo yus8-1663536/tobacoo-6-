@@ -28,3 +28,20 @@ conclusion_1 <- "The first tab, 'State Comparison', investigates the cancer rate
                 represent more than half of the top 10 states with the highest tobacco-related cancer rates. This could be due to these states having 
                 more of an accepting culture towards smoking compared to other states in the western United States. By fiddling with the state comparison
                 visualization, one can see that west coast states (California for example) have much lower cancer rates than most other states."
+
+canctype<- c("Trachea,Lung and Bronchus", "Colon and Rectum", "Urinary Bladder", "Kidney and Renal Pelvis", "Pancreas", "Lip, Oral Cavity and Pharynx",
+             "Cervix", "Liver", "Stomach", "Esophagus", "Acute Myeloid Leukemia", "Larynx")
+conclusion_2 <- "The second tab, 'Cancer Type Comparison', looks into the all the tobacco-related cancers during the year of 2012-2016 and prompt users to
+                choose from any two types of cancer each time to compare its age adjusted rates.The table below presents the statistic of prevalent cancers,
+                with 'lci' presenting the 95% lower confident interval, 'uci' meaning the 95% upper confident interval, 'count' stadning 
+                for the number of new cases and 'population' presenting the total population of the US.From the table, it it straightforward to see that 
+                the most prevalent cancers is Trachea, Lung and Bronchus Cancer, which takes up 31.4% of all tabacco-associated
+                cancers. The second most prevalent cancer associated with tobacco is Colon and Rectum cancers, which takes up 20.4% of total tobacco-associated 
+                cancers. Beyond that, it is not surprising to see the Lip, Oral Cavity Cancers on the list. From there, it can be concluded that the probability of 
+                getting certain tobacco-related cancers depends how frequent the hazardous substance like nicotine have contacts with different organs. With that 
+                being said, the more frequent an organ get affected by hazardous substance from tobacco, the more likely that organ would be cancerized." 
+
+
+
+
+

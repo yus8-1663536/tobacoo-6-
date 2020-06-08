@@ -3,14 +3,14 @@ source("analysis.R")
 source("text.R")
 
 my_ui <- navbarPage(
-  title = "Tobacco Project",
-  tabPanel("Introduction",
+  title = strong("Tobacco Project"),
+  tabPanel(em("Introduction"),
            h2("Introduction"),
            p(introduction_1),
            p(introduction_2),
            p(introduction_3)
            ),
-  tabPanel("State Comparison",
+  tabPanel(em("State Comparison"),
             sidebarLayout(
               sidebarPanel(
                 selectInput("state_1", "State #1:", choices = dstates, selected = "Alabama"),
@@ -26,18 +26,33 @@ my_ui <- navbarPage(
            br(),
            plotOutput("topStates")
            ),
-  tabPanel("Yvan's Part"
+  tabPanel(em("Cancer Type Comparison"), 
+           sidebarLayout(
+             sidebarPanel(
+               selectInput("cancer_1", "First Cancer:", choices = canctype, selected = "Cervix"),
+               hr(),
+               selectInput("cancer_2", "Second Cancer:", choices = canctype, selected = "Stomach"),
+               hr(), 
+               helpText("Choose two cancers to compare prevalence")
+             ),
+             mainPanel(
+               plotOutput("types_cancer")
+             ),
+           ),
+           br(),
+           tableOutput("topCancers")
            
            ),
-  tabPanel("Jerimiyah's Part"
+  tabPanel(em("Jerimiyah's Part")
           
            ),
-  tabPanel("Shilpa's Part"
+  tabPanel(em("Shilpa's Part")
            
            ),
-  tabPanel("Conclusion",
+  tabPanel(em("Conclusion"),
            h2("Conclusion"),
-           p(conclusion_1)
+           p(conclusion_1),
+           p(conclusion_2)
            ),
   fluid = TRUE
 )
@@ -48,6 +63,14 @@ my_server <- function(input, output) {
  })
  output$topStates <- renderPlot({
    topStates
+ })
+ 
+ output$types_cancer <- renderPlot({
+   cancerByType(input$cancer_1,input$cancer_2)
+ })
+ 
+ output$topCancers <- renderTable({
+   topCancers
  })
 }
 
