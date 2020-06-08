@@ -9,6 +9,7 @@ library(stringr)
 demo <- read.csv("data/demographic data.csv", stringsAsFactors = F)
 tobacco <- read.csv("data/tobacco.csv", stringsAsFactors = F)
 
+
 ## Function to compare two states
 cancerByState <- function(state_1, state_2) {
   state_data <- demo %>%
@@ -34,3 +35,27 @@ topStates <- demo %>%
   geom_col() +
   coord_flip() +
   theme(legend.position = "none")
+
+## uploading data 
+cancer_type <- read.csv("data/cancer_type.csv",stringsAsFactors = F)
+
+## Function to compare cancer types
+cancerByType<- function(cancer_1, cancer_2){
+  type_data <- cancer_type %>%
+    mutate(CancerType = str_remove_all(CancerType,"'"))%>%
+    mutate(rate = str_remove_all(Rate, "'")) %>%
+    filter(CancerType == cancer_1 | CancerType == cancer_2)
+  
+    ggplot(type_data,aes(x= CancerType, y = as.double(rate), fill = CancerType))+
+    geom_col()+
+    labs(x="Cancer Type", y = "Age Adjusted Rates", title = "Tobacco-associated Cancers, Male and Female, United States, 2012-2016
+Rate per 100,000 people")
+}
+## display top 5 tobacco related cancer types
+topCancers <- cancer_type %>%
+  mutate(CancerType = str_remove_all(CancerType,"'"))%>%
+  mutate(Rate = str_remove_all(Rate, "'"))%>%
+  mutate(Count = str_remove_all(Count,"'"))%>%
+  arrange(desc(Count))%>%
+  head(13)
+  
