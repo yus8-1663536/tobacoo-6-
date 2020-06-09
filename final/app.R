@@ -9,23 +9,23 @@ my_ui <- navbarPage(
            p(introduction_1),
            p(introduction_2),
            p(introduction_3)
-           ),
+  ),
   tabPanel(em("State Comparison"),
-            sidebarLayout(
-              sidebarPanel(
-                selectInput("state_1", "State #1:", choices = dstates, selected = "Alabama"),
-                hr(),
-                selectInput("state_2", "State #2", choices = dstates, selected = "Alaska"),
-                hr(),
-                helpText("Choose two states to compare cancer rates")
-              ),
-              mainPanel(
-                plotOutput("states_cancer")
-              ),
-            ),
+           sidebarLayout(
+             sidebarPanel(
+               selectInput("state_1", "State #1:", choices = dstates, selected = "Alabama"),
+               hr(),
+               selectInput("state_2", "State #2", choices = dstates, selected = "Alaska"),
+               hr(),
+               helpText("Choose two states to compare cancer rates")
+             ),
+             mainPanel(
+               plotOutput("states_cancer")
+             ),
+           ),
            br(),
            plotOutput("topStates")
-           ),
+  ),
   tabPanel(em("Cancer Type Comparison"), 
            sidebarLayout(
              sidebarPanel(
@@ -42,10 +42,26 @@ my_ui <- navbarPage(
            br(),
            tableOutput("topCancers")
            
+  ),
+  tabPanel(em("Smoking Behavior"),
+           sidebarLayout(
+             sidebarPanel(
+               selectInput("smoking_category", "Smoking Behavior:",
+                           choices = smoke_categories, selected = "Smoke Everyday"),
+               hr(),
+               selectInput("year", "Year:", choices = timeline, selected = 1995),
+               hr(),
+               helpText("Choose a smoking behavior and a year to observe state percentages in the
+                        U.S. respective to the variables you selected")
+             ),
+             mainPanel(
+               plotlyOutput("smoke_category")
+             ),
            ),
-  tabPanel(em("Jerimiyah's Part")
-          
-           ),
+           br(),
+           plotlyOutput("statesTable")
+           
+  ),
   tabPanel(em("Nationwide by Year Comparison"),
            sidebarLayout(
              sidebarPanel(
@@ -62,39 +78,48 @@ my_ui <- navbarPage(
            br(),
            tableOutput("smokers_america_table")
            
-           ),
+  ),
   tabPanel(em("Conclusion"),
            h2("Conclusion"),
            p(conclusion_1),
            p(conclusion_2),
+           p(conclusion_3),
            p(conclusion_4)
-           ),
+  ),
   fluid = TRUE
 )
 
 my_server <- function(input, output) {
- output$states_cancer <- renderPlot({
-   cancerByState(input$state_1, input$state_2)
- })
- output$topStates <- renderPlot({
-   topStates
- })
- 
- output$types_cancer <- renderPlot({
-   cancerByType(input$cancer_1,input$cancer_2)
- })
- 
- output$topCancers <- renderTable({
-   topCancers
- })
- 
- output$smokers_america <- renderPlot({
-   nation_by_year(input$year_1, input$year_2)
- })
- 
- output$smokers_america_table <- renderTable({
-   nationwide_behavior
- })
+  output$states_cancer <- renderPlot({
+    cancerByState(input$state_1, input$state_2)
+  })
+  output$topStates <- renderPlot({
+    topStates
+  })
+  
+  output$types_cancer <- renderPlot({
+    cancerByType(input$cancer_1,input$cancer_2)
+  })
+  
+  output$topCancers <- renderTable({
+    topCancers
+  })
+  
+  output$smoke_category <- renderPlotly({
+    createMap(input$smoking_category, input$year)
+  })
+  
+  output$statesTable <- renderPlotly({
+    createTable(input$smoking_category, input$year)
+  })
+  
+  output$smokers_america <- renderPlot({
+    nation_by_year(input$year_1, input$year_2)
+  })
+  
+  output$smokers_america_table <- renderTable({
+    nationwide_behavior
+  })
 }
 
 shinyApp(ui = my_ui, server = my_server)

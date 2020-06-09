@@ -14,12 +14,12 @@ introduction_3 <- "Each tab in the panel above investigates a different aspect o
                   tab."
 
 dstates <- c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-            "District of Colombia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
-            "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
-            "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
-            "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
-            "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
-            "West Virginia", "Wisconsin", "Wyoming")
+             "District of Colombia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+             "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+             "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+             "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+             "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
+             "West Virginia", "Wisconsin", "Wyoming")
 
 conclusion_1 <- "The first tab, 'State Comparison', investigates the cancer rates between two states at a time, as well as displays the 10 states
                 with the highest tobacco-related cancer rates. Looking at the graph with the top 10 states, one can see a trend where states located in the
@@ -41,9 +41,23 @@ conclusion_2 <- "The second tab, 'Cancer Type Comparison', looks into the all th
                 getting certain tobacco-related cancers depends how frequent the hazardous substance like nicotine have contacts with different organs. With that 
                 being said, the more frequent an organ get affected by hazardous substance from tobacco, the more likely that organ would be cancerized." 
 
+smoke_categories <- c("Smoke Everyday", "Smoke Some Days", 
+                      "Former Smoker", "Never Smoked")
+
+timeline <- c(1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005,
+              2006, 2007, 2008, 2009, 2010)
+
+conclusion_3 <- "The third tab, 'Smoking Behavior', explores the prevalence of four different smoking usage categories in the US from 1995 to 2010. And allows
+                users to select a particular smoking behavior and year they'd like to observe, then constructs a map of the United States that includes each
+                states percentages (respective to the users choices). Also, a table is created below to illustrate the rank, state, percentage and precise location
+                from which the data is collected. By closely examining each individual smoking behavior, one can be able to see significant trends with states
+                and in some cases regions. For 'Smoke Everyday', Kentucky and its neighboring states consistently appear in the top 10 over the years. This can
+                be seen in the region's acceptance towards tobacco and that it's apart of or nearby the `Virginia-Carolina Tobacco Belt'; an area that leads the
+                country in tobacco production. While for 'Never Smoked', the state of Utah ranks first from 1997 to 2010, which acknowledges a contrast to the
+                Midwest and Southeast of the US. The reasoning behind this is associated with the strict religious views agaisnt drugs and substances in Utah.
+                The 'Smoke Some Days' group is typically central to the Southwestern part of the country, with repeated showings of New Mexico, Texas and Nevada
+                in the top 10 percentages. And lastly for 'Former Smoker', high percentage leaders are found in the Northeastern states of the US and signifies a
+                region in which anti-tobacco campaigns and movement is effective."
 
 years_listed <- c("1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010")
 conclusion_4 <- "The fourth tab, 'Nationwide by Year Comparison', has an interactive plot that portrays the U.S. nationwide (including the states, D.C., and U.S. territories) daily smoker percentage by year. In terms of data, 15 different years are accounted for (from 1995 to 2010). Also, this tab includes a table displaying data about U.S. nationwide smoking behavior percentages by year (from 1995 to 2010). The interactive plot demonstrates how as the years go by, the percentage of daily smokers nationwide decreases in tiny increments. This may be a result of increasesd research and awareness about the negative consequences of daily smoking, which could go hand-in-hand with people starting to change their habits of being a smoker. The only exception to this pattern was in 2002, where this was a slight increase in the percentage. However, when looking at the pattern overall, there is a general decrease in daily smokers in the nation. The change is much more evident in the daily smoker percentage compared to that of people who smoke some days and former smokers. This is depicted by the table of nationwide smoking behavior percentages. While there is an almost 8% percent decrease in daily smokers, the percentages for the other behaviors tend to jump around slightly over the years. However, the nationwide percentage for people who have never smoked has increased over the years, which can also potentially indicate that more people are paying attention to the consequences of smoking and are therefore avoiding it."
-
-
-
